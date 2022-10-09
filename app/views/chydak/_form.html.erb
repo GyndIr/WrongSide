@@ -1,6 +1,6 @@
 <h1>FormChydak</h1>
 
-<%= form_with model: chydak do |form| %>
+<%= form_for(chydak, as: chydak, url: chydak_path(chydak), html: { data: { turbo: false} } ) do |form| %>
   <div>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
