@@ -1,0 +1,44 @@
+<h1> <%= @chydak.title %> </h1>
+
+<p> <%= @chydak.body %> </p>
+
+<ul>
+    <li><%= link_to "Edit", edit_chydak_path(@chydak)%></li>
+    <li><%= link_to "Destroy", chydak_path(@chydak),
+    
+    data:{
+            turbo_metod: :delate,
+            turbo_confirm: "Are you sure?"
+        }%></li>
+</ul>
+
+<h2>Comments</h2>
+<% @chydak.comments.each do |comment|%>
+    <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+    </p>
+
+    <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+    </p>
+    <% end %>
+
+<h2>Add a comment</h2>
+<%= from_with model: [@chydak, @chydak.comments.build] do |form| %>
+
+<p>
+<%= form.label :commenter %><br>
+<%= form.text_field :commenter %>
+</p>
+
+<p>
+<%= form.label :body %><br>
+<%= form.text_field :body %>
+</p>
+
+<p>
+<%= form.submit %>
+</p>
+<% end %>

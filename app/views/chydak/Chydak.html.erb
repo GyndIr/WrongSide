@@ -1,0 +1,11 @@
+<h1>Chydak</h1>
+
+<ul>
+  <% @chydak.each do |chydak| %>
+    <li>
+      <%= link_to chydak.title, chydak %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Chydilo", new_chydak_path %>

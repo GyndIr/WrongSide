@@ -1,0 +1,11 @@
+<h1>ChydakVtapke</h1>
+
+<ul>
+  <% @chydak.each do |chydak| %>
+    <li>
+      <a href="/chydak/<%= chydak.id %>">
+        <%= chydak.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
