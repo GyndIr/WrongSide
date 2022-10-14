@@ -1,10 +1,14 @@
 <h1>Chydak</h1>
 
+Our SaPer has <%=Chydak.public_count %> chydak and counting!
+
 <ul>
   <% @chydak.each do |chydak| %>
+    <% unless chydak.archived? %>
     <li>
       <%= link_to chydak.title, chydak %>
     </li>
+    <% end %>
   <% end %>
 </ul>
 

@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_06_144918) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_14_110514) do
   create_table "chydaks", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -24,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_06_144918) do
     t.integer "chydak_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["chydak_id"], name: "index_comments_on_chydak_id"
   end
 

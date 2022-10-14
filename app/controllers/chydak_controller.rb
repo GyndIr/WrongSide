@@ -44,6 +44,6 @@ class ChydakController < ApplicationController
 
   private
   def chydak_params
-    params.require(:chydak).permit(:title, :body)
+    params.require(:chydak).permit(:title, :body, :status)
   end
 end
